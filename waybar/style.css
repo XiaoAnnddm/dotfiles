@@ -1,0 +1,85 @@
+@import "/home/andrew/.cache/wal/colors-waybar.css";
+* {
+    border: none;
+    border-radius: 0;
+    font-family: "Ubuntu Nerd Font";
+    font-size: 13px;
+    /* min-height: 0; */
+}
+
+window#waybar {
+    background: transparent; 
+    /*background: @background;*/
+    /*color: white;*/
+    color: @color1;
+}
+
+#window {
+    font-weight: bold;
+    font-family: "Ubuntu";
+}
+
+#workspaces button {
+    padding: 0 5px;
+    background: transparent;
+    color: white;
+}
+
+#workspaces button.focused {
+    color: #c9545d;
+}
+
+#clock {
+    font-weight: bold;
+}
+
+#battery icon {
+    color: red;
+}
+
+#battery.charging {
+}
+
+@keyframes blink {
+    to {
+        background-color: #ffffff;
+        color: black;
+    }
+}
+
+#battery.warning:not(.charging) {
+    color: white;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#network.disconnected {
+    background: #f53c3c;
+}
+
+#pulseaudio.muted {
+}
+
+#workspaces,
+#mode,
+#window,
+#custom-power,
+#pulseaudio,
+#network,
+#cpu,
+#memory,
+#battery,
+#tray,
+#clock {
+    padding: 2px 4px;
+    margin: 2px 3px 1px 3px;
+    /* background: rgba(157, 205, 221, 1); */
+    background: @background;
+    border-radius: 5px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    /* border-bottom: 7px solid transparent; */
+    /* border-bottom-color: rgba(110, 200, 229, 1); */
+}
