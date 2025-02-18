@@ -1,0 +1,86 @@
+{
+    "layer": "top", // Waybar at top layer
+    "position": "top", // Waybar at the bottom of your screen
+    "height": 24, // Waybar height
+    // "width": 1366, // Waybar width
+    // Choose the order of the modules
+    "modules-left": ["tray", "hyprland/window"],
+    "modules-center": ["hyprland/workspaces"],
+    "modules-right": ["custom/power", "backlight", "wireplumber", "network", "cpu", "memory", "battery", "clock"],
+    "hyprland/workspaces": {
+        "format": "{icon}. {windows}",
+        "window-rewrite-default": "",
+        "window-rewrite": {
+	    "class<firefox>": "", // Windows whose classes are "firefox"
+	    "class<firefox> title<.*github.*>": "",
+	    "class<kitty>": "",
+	    "class<obsidian>": ""
+	},
+	"persistent-workspaces": {
+	    "*": 5
+	}
+    },
+    "hyprland/window": {
+	"format": "{class}",
+	"icon": true, 
+	"icon-size": 17,
+	"rewrite": {
+	    "initialClass<firefox>": "🌎"
+	},
+	"separate-outputs": true
+    },
+    "tray": {
+        "spacing": 5,
+	"icon-size": 13
+    },
+    "clock": {
+        "format-alt": "{:%Y-%m-%d}"
+    },
+    "cpu": {
+        "format": "{usage}% "
+    },
+    "memory": {
+        "format": "{}% "
+    },
+    "battery": {
+        "bat": "BAT1",
+        "states": {
+            // "good": 95,
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{capacity}% {icon}",
+        // "format-good": "", // An empty format will hide the module
+        // "format-full": "",
+        "format-icons": ["", "", "", "", ""]
+    },
+    "network": {
+        // "interface": "wlp2s0", // (Optional) To force the use of this interface
+        "format-wifi": "{essid} ({signalStrength}%) ",
+        "format-ethernet": "{ifname}: {ipaddr}/{cidr} ",
+        "format-disconnected": "Disconnected ⚠"
+    },
+    "wireplumber": {
+        //"scroll-step": 1,
+        "format": "{volume}% {icon}",
+        "format-bluetooth": "{volume}% {icon}",
+        "format-muted": "",
+        "format-icons": {
+            "headphones": "",
+            "handsfree": "",
+            "headset": "",
+            "default": ["", ""]
+        },
+        "on-click": "pavucontrol"
+    },
+    "custom/power": {
+	"format": "",
+	"on-click": "wlogout"
+    },
+    "backlight": {
+        "device": "intel_backlight",
+        "format": "{percent}% {icon}",
+        "format-icons": ["", ""]
+    }
+
+}
