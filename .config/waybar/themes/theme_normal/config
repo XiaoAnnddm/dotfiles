@@ -1,0 +1,42 @@
+{
+  "layer": "top", // Waybar at top layer
+  "position": "top", // Waybar position (top|bottom|left|right)
+  "height": 46,
+  "margin": "0 0 0 0",
+  //"width": 1350, // Waybar width
+  // Choose the order of the modules idle_inhibitor
+  "modules-left": [
+    "custom/launcher",
+    "hyprland/workspaces",
+    "custom/swap",
+    "tray",
+    "hyprland/window",
+    //"custom/cava-internal",
+    "mpd#2",
+    "mpd#3",
+    "mpd#4",
+    "mpd"
+  ],
+  "modules-center": ["clock", "custom/notification"],
+  "modules-right": [
+    "backlight",
+    "pulseaudio",
+    //"custom/keyboard-layout",
+    "temperature",
+    // "cpu",
+    // "memory",
+    // "disk",
+    "group/hardware",
+    "battery",
+    "network",
+    //"idle_inhibitor",
+    "custom/power"
+  ],
+
+
+    // Load Modules
+    "include": ["~/.config/waybar/themes/theme_normal/modules.json"],
+
+  // Modules configuration
+
+}

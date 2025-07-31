@@ -1,0 +1,224 @@
+/* Catppuccin Mocha 色彩变量 */
+@define-color base rgba(30, 30, 46, 0.75);  /* 半透明背景 */
+@define-color mantle #181825;
+@define-color crust #11111b;
+@define-color text #cdd6f4;  /* 主文本色 */
+@define-color subtext0 #a6adc8;  /* 次要文本色 */
+@define-color subtext1 #bac2de;  /* 辅助文本色 */
+@define-color surface0 #313244;  /* 表面色 1 */
+@define-color surface1 #45475a;  /* 表面色 2 */
+@define-color surface2 #585b70;  /* 表面色 3 */
+@define-color blue #89b4fa;  /* 蓝色 */
+@define-color lavender #b4befe;  /* 薰衣草色 */
+@define-color sapphire #74c7ec;  /* 蓝宝石色 */
+@define-color green #a6e3a1;  /* 绿色 */
+@define-color red #f38ba8;  /* 红色 */
+@define-color mauve #cba6f7;  /* 紫色 */
+@define-color teal #94e2d5;  /* 青色 */
+
+* {
+  font-family: JetBrainsMonoNerdFontMono;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+/* 通知中心主窗口 */
+.control-center {
+  background-color: @base;
+  backdrop-filter: blur(10px);  /* 背景模糊效果 */
+  border-radius: 0;  /* 去除圆角 */
+  border-left: 3px solid @blue;  /* 左侧边框强调 */
+}
+
+.control-center-list {
+  background: transparent;
+}
+
+.control-center-list-placeholder {
+  opacity: 0.5;
+}
+
+/* 标题栏 */
+.widget-title {
+  color: @text;
+  padding: 10px 10px;
+  margin: 10px 10px 5px 10px;
+  font-size: 1.5rem;
+  border-radius: 0px;
+}
+
+.widget-title > button {
+  font-size: 1rem;
+  color: @crust;
+  padding: 10px;
+  text-shadow: none;
+  background: @blue;
+  box-shadow: none;
+  border-radius: 0px;
+}
+
+.widget-title > button:hover {
+  background: @mauve;
+}
+
+/* 通知行样式 */
+.notification-row {
+  outline: none;
+  margin: 20px;
+  padding: 0;
+}
+
+.notification {
+  background: @surface0;
+  margin: 0px;
+  border-radius: 0px;
+  border-left: 3px solid @blue;
+}
+
+.notification-content {
+  background: @surface0;
+  padding: 7px;
+  margin: 0;
+}
+
+/* 关闭按钮 */
+.close-button {
+  background: @surface0;
+  color: @red;
+  text-shadow: none;
+  padding: 0;
+  border-radius: 0px;
+  margin-top: 9px;
+  margin-right: 5px;
+}
+
+.close-button:hover {
+  box-shadow: none;
+  background: @red;
+  color: @crust;
+  transition: all 0.15s ease-in-out;
+  border: none;
+}
+
+/* 通知内容 */
+.notification-action {
+  color: @base;
+  background: @surface0;
+}
+
+.summary {
+  padding-top: 7px;
+  font-size: 13px;
+  color: @text;
+}
+
+.time {
+  font-size: 11px;
+  color: @subtext0;
+  margin-right: 40px;
+}
+
+.body {
+  font-size: 12px;
+  color: @subtext1;
+}
+
+/* 音量和亮度控制 */
+.widget-volume, .widget-brightness {
+  background: @surface0;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 0px;
+}
+
+.widget-volume scale trough, .widget-brightness scale trough {
+  background: @surface1;
+  min-height: 6px;
+  border-radius: 0px;
+}
+
+.widget-volume scale trough highlight, .widget-brightness scale trough highlight {
+  background: @blue;
+  border-radius: 0px;
+}
+
+.widget-volume label, .widget-brightness label {
+  color: @text;
+}
+
+/* MPRIS 媒体播放器 */
+.widget-mpris {
+  padding: 5px 5px 5px 5px; 
+  margin: 10px; 
+  border-radius: 0px;
+  background: @surface0;
+}
+
+.widget-mpris > box > button {
+  border-radius: 0px;
+}
+
+.widget-mpris-player {
+  box-shadow: none;
+  padding: 5px 5px; 
+  margin: 10px;
+  background: @surface1;
+}
+
+.widget-mpris-album-art {
+  border-radius: 0px;
+  image-rendering: -webkit-optimize-contrast;  /* 优化图片清晰度 */
+  image-rendering: crisp-edges;
+}
+
+.widget-mpris-title {
+  color: @text;
+  font-weight: bold;
+  font-size: 13px;
+  margin-bottom: 2px;
+}
+
+.widget-mpris-subtitle {
+  color: @subtext1;
+  font-size: 11px;
+}
+
+/* 按钮网格 */
+.widget-buttons-grid {
+  padding: 5px;
+  margin: 10px;
+  background: @surface0;
+}
+
+.widget-buttons-grid button {
+  background: @surface1;
+  color: @text;
+  border-radius: 0px;
+  padding: 10px;
+  margin: 5px;
+  font-size: 18px;
+}
+
+.widget-buttons-grid button:hover {
+  background: @blue;
+  color: @crust;
+}
+
+.widget-buttons-grid button.active {
+  background: @green;
+  color: @crust;
+}
+
+.widget-buttons-grid button.urgent {
+  background: @red;
+  color: @crust;
+}
+
+/* 弹出通知 */
+.floating-notifications {
+  background: transparent;
+}
+
+.blank-window {
+  background: rgba(30, 30, 46, 0.5);
+}

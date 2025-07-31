@@ -1,82 +1,203 @@
+/**
+ * Rofi config file
+ *
+ * Configuration:
+ * - modi: A list of modes to display.
+ * - show-icons: Show icons in the list.
+ * - terminal: The terminal to use.
+ * - font: The font to use.
+ *
+ * Theme:
+ * - Nord theme (https://www.nordtheme.com/)
+ */
 
 configuration {
-	display-drun: "Apps";
-	display-window: "Windows";
-	drun-display-format: "{icon} {name}";
-	modi: "window,drun";
-	show-icons: true;
+    modi: "drun,run,window,ssh";
+    font: "Fira Code 12";
+    show-icons: true;
+    terminal: "kitty"; /* <-- 修改为你自己的终端 */
+    icon-theme: "Papirus"; /* <-- 修改为你自己的图标主题 */
+    cycle: true;
+    sidebar-mode: false;
+    ssh-client: "ssh";
+    drun-display-format: "{name}";
+    run-command: "{cmd}";
+    window-format: "{w}    {c}   {t}";
+    case-sensitive: false;
+    matching: "fuzzy";
+    
+    /* 位置和大小 */
+    location: 0;
+    yoffset: 0;
+    xoffset: 0;
+    fixed-num-lines: true;
+
+    /* 其他 */
+    threads: 0;
+    combi-modi: "window,drun";
+    pid: "/run/user/1000/rofi.pid";
+    display-drun: "Apps";
+    display-run: "Run";
+    display-window: "Window";
+    display-ssh: "SSH";
+    display-combi: "Combi";
+    kb-remove-to-eol: "Control+k";
+    kb-accept-entry: "Control+m,Return,KP_Enter";
+    kb-mode-next: "Shift+Right,Control+Tab";
+    kb-mode-previous: "Shift+Left,Control+ISO_Left_Tab";
+    kb-row-up: "Up,Control+p";
+    kb-row-down: "Down,Control+n";
 }
 
-@theme "/dev/null"
-
+/*
+ * Nord Rofi Theme
+ * Based on Nord theme (https://www.nordtheme.com/)
+ */
 * {
-	bg: #11121D;
-	bg-alt: #444b6a;
+    nord0: #2E3440;
+    nord1: #3B4252;
+    nord2: #434C5E;
+    nord3: #4C566A;
+    nord4: #D8DEE9;
+    nord5: #E5E9F0;
+    nord6: #ECEFF4;
+    nord7: #8FBCBB;
+    nord8: #88C0D0;
+    nord9: #81A1C1;
+    nord10: #5E81AC;
+    nord11: #BF616A;
+    nord12: #D08770;
+    nord13: #EBCB8B;
+    nord14: #A3BE8C;
+    nord15: #B48EAD;
 
-	fg: #FFFFFF;
-	fg-alt: #787c99;
-
-	background-color: @bg;
-	
-	// border: 0;
-	margin: 0;
-	padding: 0;
-	spacing: 0;
+    background-color: transparent;
+    text-color: @nord4;
 }
 
 window {
-	width: 35%;
-	border: 2;
-	border-color: #444b6a;
-	border-radius: 5px;
-}
-
-element {
-	padding: 12px ;
-	text-color: @fg-alt;
-}
-
-element selected {
-	text-color: @fg;
-	border: 1 0 1 0;
-	border-color: #ffffff;
-}
-
-element-text {
-	background-color: inherit;
-	text-color: inherit;
-	vertical-align: 0.5;
-}
-
-element-icon {
-	size: 30;
-}
-
-entry {
-	background-color: @bg-alt;
-	padding: 12;
-	text-color: @fg;
-}
-
-inputbar {
-	children: [prompt, entry];
-}
-
-listview {
-	background-color: @bg;
-	columns: 1;
-	lines: 8;
+    background-color: @nord1;
+    border: 2px;
+    border-color: @nord10;
+    border-radius: 10px;
+    padding: 20px;
+    width: 600px;
 }
 
 mainbox {
-	background-color: @bg;
-	children: [inputbar, listview];
+    border: 0;
+    padding: 0;
+}
+
+message {
+    border: 2px 0px 0px;
+    border-color: @nord3;
+    padding: 5px;
+}
+
+textbox {
+    text-color: @nord4;
+}
+
+listview {
+    fixed-height: 0;
+    border: 2px 0px 0px;
+    border-color: @nord3;
+    spacing: 5px;
+    scrollbar: true;
+    padding: 10px 5px 0px;
+    columns: 1;
+    lines: 8;
+}
+
+element {
+    border: 0;
+    padding: 8px;
+    border-radius: 5px;
+}
+
+element-icon {
+    size: 24px;
+    padding: 0 10px 0 0;
+}
+
+element-text {
+    background-color: inherit;
+    text-color: inherit;
+}
+
+element.normal.normal {
+    background-color: @nord1;
+    text-color: @nord4;
+}
+
+element.normal.urgent {
+    background-color: @nord11;
+    text-color: @nord6;
+}
+
+element.normal.active {
+    background-color: @nord10;
+    text-color: @nord6;
+}
+
+element.selected.normal {
+    background-color: @nord3;
+    text-color: @nord6;
+}
+
+element.selected.urgent {
+    background-color: @nord11;
+    text-color: @nord6;
+}
+
+element.selected.active {
+    background-color: @nord10;
+    text-color: @nord6;
+}
+
+element.alternate.normal {
+    background-color: @nord1;
+    text-color: @nord4;
+}
+
+element.alternate.urgent {
+    background-color: @nord11;
+    text-color: @nord6;
+}
+
+element.alternate.active {
+    background-color: @nord10;
+    text-color: @nord6;
+}
+
+scrollbar {
+    width: 4px;
+    border: 0;
+    handle-width: 8px;
+    padding: 0;
+    handle-color: @nord10;
+}
+
+inputbar {
+    spacing: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: @nord2;
+    text-color: @nord6;
+    children: [prompt, entry];
+    margin: 0px 0px 10px 0px;
 }
 
 prompt {
-	background-color: @bg-alt;
-	enabled: true;
-	padding: 12 0 0 12;
-	text-color: @fg;
+    enabled: true;
+    background-color: inherit;
+    text-color: @nord8;
 }
 
+entry {
+    background-color: inherit;
+    text-color: inherit;
+    placeholder: "Search...";
+    placeholder-color: @nord3;
+}

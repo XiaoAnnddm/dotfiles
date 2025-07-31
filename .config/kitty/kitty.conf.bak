@@ -1,9 +1,8 @@
 # include $HOME/.cache/wal/colors-kitty.conf
-background_opacity 1.0
+background_opacity 0.9
 background_blur 30
 
-# font "Hack Nerd Font"
-font "JetBrains Nerd Font"
+font "Hack Nerd Font"
 
 # window
 hide_window_decorations     titlebar-only
@@ -15,15 +14,7 @@ tab_bar_edge            top
 tab_bar_style           powerline
 tab_powerline_style     slanted
 
-# cursor
-cursor_trail 20
-cursor_trail_decay 0.0 0.3
-cursor_trail_start_threshold 10
-
-# remote allow 'kitty @'
-allow_remote_control yes
-
 # BEGIN_KITTY_THEME
-# Catppuccin-Mocha
-include Catppuccin-Mocha.conf
+# Tokyo Night
+include current-theme.conf
 # END_KITTY_THEME
