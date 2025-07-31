@@ -1,4 +1,1 @@
-# My dotfiles
-hyprland
-waybar
-rofi
+# My Archlinux dotfiles
