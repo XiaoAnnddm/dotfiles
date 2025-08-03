@@ -23,7 +23,7 @@
     color: @lavender;
     border: 0;
     padding: 0 0;
-    font-family: "JetBrainsMono Nerd Font";
+    font-family: "FontAwesome", "JetBrainsMono Nerd Font", "Symbols Nerd Font", "Noto Sans", "sans-serif";
 }
 
 window#waybar {
@@ -301,15 +301,14 @@ window#waybar.empty #window {
     color: @base;
     border-radius: 10px;
     padding: 5px 10px;
-    margin-left: 10px;
+    margin-left: 5px;
 }
 
 #custom-power {
     color: @base;
-    background-color: @red;
+    background-color: @mauve;
     border-radius: 10px;
-    margin-left: 5px;
-    margin-right: 15px;
+    margin-right: 5px;
     padding: 5px 10px;
 }
 

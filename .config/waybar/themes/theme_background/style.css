@@ -23,7 +23,7 @@
     color: @lavender;
     border: 0;
     padding: 0 0;
-    font-family: "JetBrainsMono Nerd Font";
+    font-family: "FontAwesome", "JetBrainsMono Nerd Font", "Symbols Nerd Font", "Noto Sans", "sans-serif";
     transition: all 0.5s ease;
 }
 
@@ -98,7 +98,6 @@ window#waybar {
 #mode,
 #window,
 #tray,
-#custom-power,
 #custom-pacman,
 #custom-system,
 #custom-notification,
@@ -302,9 +301,6 @@ window#waybar.empty #window {
     border-radius: 10px;
 }
 
-#custom-launcher,
-#custom-power {}
-
 #custom-launcher {
     background-color: shade(@base, 1.1);
     color: @mauve;
@@ -313,12 +309,13 @@ window#waybar.empty #window {
 }
 
 #custom-power {
-    color: @base;
-    background-color: @red;
-    border-radius: 10px;
-    margin-left: 5px;
-    margin-right: 5px;
-    padding: 5px 10px;
+    background-color: shade(@base, 1.1);
+    color: @mauve;
+    /* color: @base; */
+    border-radius: 15px 0 0 0;
+    /* margin-left: 5px; */
+    /* margin-right: 5px; */
+    padding: 5px 10px 5px 10px;
 }
 
 #window {

@@ -132,15 +132,16 @@
 
   // System
   "custom/system": {
-    "format": "",
+    "format": "",
+    //"format": "",
     "tooltip": false
   },
   "cpu": {
-    "format": " {usage: >3}%",
+    "format": "{usage: >3}%",
     "on-click": "alacritty -e htop"
   },
   "memory": {
-    "format": " {: >3}%",
+    "format": "{: >3}%",
     "on-click": "alacritty -e htop"
   },
   "temperature": {
@@ -153,7 +154,7 @@
   // Harddisc space used
   "disk": {
     // "interval": 30,
-    "format": " {percentage_used}% ",
+    "format": "{percentage_used}%",
     "path": "/",
     //"on-click": "alacritty -e htop"
   }, 
@@ -161,7 +162,7 @@
     "group/hardware": {
         "orientation": "inherit",
         "drawer": {
-            "transition-duration": 300,
+            "transition-duration": 100,
             "children-class": "not-memory",
             "transition-left-to-right": false
         },        
@@ -176,7 +177,7 @@
     },
   "backlight": {
     // "device": "acpi_video1",
-    "format": "{icon} {percent: >3}%",
+    "format": "{icon}{percent: >3}%",
     // "format-icons": ["", ""],
         "format-icons": ["", "", "", "", "", "", "", "", ""],
     "on-scroll-down": "brightnessctl -c backlight set 5%-",
@@ -192,9 +193,9 @@
       "critical": 15
     },
     "format": "{icon} {capacity: >3}%",
-    "format-charging": "  {capacity}%",
-    "format-plugged": "  {capacity}%",
-    "format-alt": "{icon}  {time}",
+    "format-charging": " {capacity}%",
+    "format-plugged": " {capacity}%",
+    "format-alt": "{icon} {time}",
     // "format-good": "", // An empty format will hide the module
     // "format-full": "",
     "format-icons": ["", "", "", "", ""]
@@ -242,7 +243,8 @@
     "signal": 8
   },
   "custom/power": {
-    "format": "⏻",
+    //"format": "⏻",
+    "format": "",
     "on-click": "wlogout -p layer-shell",
     "tooltip": false
   },
