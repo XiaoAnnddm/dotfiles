@@ -22,7 +22,7 @@
     "backlight",
     "pulseaudio",
     //"custom/keyboard-layout",
-    "temperature",
+    //"temperature",
     // "cpu",
     // "memory",
     // "disk",
