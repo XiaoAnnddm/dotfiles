@@ -1,7 +1,12 @@
 vim.lsp.enable({
     'clangd',
     'lua-language-server',
+    'glsl',
+    'qmlls',
 })
+
+-- cmp window border
+vim.o.winborder = 'rounded'
 
 vim.api.nvim_create_autocmd('LspAttach', {
     group = vim.api.nvim_create_augroup('lsp-attach', { clear = true }),
@@ -23,10 +28,34 @@ vim.api.nvim_create_autocmd('LspAttach', {
             virtual_text = true,
         }
 
+        -- show more warning
+        vim.keymap.set('n', '<leader>lw', function()
+            vim.diagnostic.open_float { source = true }
+        end, { buffer = event.buf, desc = 'LSP: Show Diagnostic' })
+
+        -- hide warning
+        vim.keymap.set(
+            'n',
+            '<leader>tw',
+            (function()
+                local diag_status = 1 -- 1 is show; 0 is hide
+                return function()
+                    if diag_status == 1 then
+                        diag_status = 0
+                        vim.diagnostic.config { underline = false, virtual_text = false, signs = false, update_in_insert = false }
+                    else
+                        diag_status = 1
+                        vim.diagnostic.config { underline = true, virtual_text = true, signs = true, update_in_insert = true }
+                    end
+                end
+            end)(),
+            { buffer = event.buf, desc = 'LSP: Toggle Diagnostics' }
+        )
+
         -- show return type
         if client and client.supports_method(vim.lsp.protocol.Methods.textDocument_inlayHint) then
             -- vim.lsp.inlay_hint.enable()
-            vim.keymap.set('n', '<leader>th', function()
+            vim.keymap.set('n', '<leader>lt', function()
                 vim.lsp.inlay_hint.enable(
                     not vim.lsp.inlay_hint.is_enabled { bufnr = event.buf })
             end, { buffer = event.buf, desc = 'LSP: Toggle Inlay Hints' })
@@ -51,12 +80,12 @@ vim.api.nvim_create_autocmd('LspAttach', {
         end
 
         -- Enable auto-completion. Note: Use CTRL-Y to select an item. |complete_CTRL-Y|
-        if client:supports_method('textDocument/completion') then
-            -- Optional: trigger autocompletion on EVERY keypress. May be slow!
-            -- local chars = {}; for i = 32, 126 do table.insert(chars, string.char(i)) end
-            -- client.server_capabilities.completionProvider.triggerCharacters = chars
-            vim.lsp.completion.enable(true, client.id, event.buf, { autotrigger = true })
-        end
+        -- if client:supports_method('textDocument/completion') then
+        --     -- Optional: trigger autocompletion on EVERY keypress. May be slow!
+        --     -- local chars = {}; for i = 32, 126 do table.insert(chars, string.char(i)) end
+        --     -- client.server_capabilities.completionProvider.triggerCharacters = chars
+        --     vim.lsp.completion.enable(true, client.id, event.buf, { autotrigger = true })
+        -- end
 
         -- Auto-format ("lint") on save.
         -- Usually not needed if server supports "textDocument/willSaveWaitUntil".

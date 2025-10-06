@@ -18,6 +18,9 @@
       "9": "",
       "10": "",
       "11": ""
+    },
+    "persistent-workspaces": {
+        "*": 5
     }
   },
   "mpd": {
@@ -177,7 +180,7 @@
     },
   "backlight": {
     // "device": "acpi_video1",
-    "format": "{icon}{percent: >3}%",
+    "format": "{icon} {percent: >3}%",
     // "format-icons": ["", ""],
         "format-icons": ["", "", "", "", "", "", "", "", ""],
     "on-scroll-down": "brightnessctl -c backlight set 5%-",
@@ -193,7 +196,7 @@
       "critical": 15
     },
     "format": "{icon} {capacity: >3}%",
-    "format-charging": " {capacity}%",
+    "format-charging": "󱐥 {capacity}%",
     "format-plugged": " {capacity}%",
     "format-alt": "{icon} {time}",
     // "format-good": "", // An empty format will hide the module

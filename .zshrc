@@ -119,6 +119,7 @@ alias c='clear'           # 清屏
 alias q='exit'            # 退出终端
 alias ..='cd ..'          # 返回上级目录
 alias mkdir='mkdir -pv'   # 创建目录时输出过程
+alias la='ls -a'          # 查看所有文件
 alias cp='cp -iv'         # 交互式复制，显示详细信息
 alias mv='mv -iv'         # 交互式移动，显示详细信息
 alias rm='rm -iv'         # 交互式删除，显示详细信息
@@ -148,7 +149,7 @@ zle -N down-line-or-beginning-search
 # -----------------------------------------------------------------------------
 # 代理地址和端口
 proxy_host="127.0.0.1"
-proxy_port="7890"
+proxy_port="28090"
 
 # 设置代理的函数
 function proxy_on() {
