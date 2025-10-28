@@ -15,8 +15,8 @@ configuration {
     modi: "drun,run,window,ssh";
     font: "Fira Code 12";
     show-icons: true;
-    terminal: "kitty"; /* <-- 修改为你自己的终端 */
-    icon-theme: "Papirus"; /* <-- 修改为你自己的图标主题 */
+    terminal: "kitty"; 
+    icon-theme: "Papirus"; 
     cycle: true;
     sidebar-mode: false;
     ssh-client: "ssh";
@@ -80,9 +80,9 @@ window {
     background-color: @nord1;
     border: 2px;
     border-color: @nord10;
-    border-radius: 10px;
+    border-radius: 0;
     padding: 20px;
-    width: 600px;
+    width: 500px;
 }
 
 mainbox {
