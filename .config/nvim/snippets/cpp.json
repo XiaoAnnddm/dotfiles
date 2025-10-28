@@ -1,8 +1,0 @@
-{
-    "std::cout": {
-        "prefix": "std::cout",
-        "body": [
-            "std::cout << "
-        ]
-    }
-}

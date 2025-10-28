@@ -1,5 +1,5 @@
 -- Nerd字体
-vim.g.have_nerd_font = true
+-- vim.g.have_nerd_font = true
 
 -------------------- vim.opt --------------------
 -- 行号
@@ -9,26 +9,26 @@ vim.opt.number = true
 vim.opt.mouse = 'a'
 vim.opt.cursorline = true
 
-vim.opt.relativenumber = true -- 行号
-vim.opt.shiftwidth = 4        -- tab缩进
+vim.opt.relativenumber = true
+vim.opt.shiftwidth = 4
 vim.opt.tabstop = 4
 
--- 显示空白字符
-vim.opt.list = true
-vim.opt.listchars = { tab = '→ ', space = '·', trail = '·' }
+-- Highlight
+vim.opt.hlsearch = false
+vim.opt.incsearch = true
 
-vim.opt.expandtab = true
-vim.opt.softtabstop = 4
-vim.opt.autoindent = true
-vim.opt.smartindent = true
-
-
-vim.opt.clipboard:append("unnamedplus")
-
-vim.opt.expandtab = true
-vim.opt.autoindent = true
+vim.opt.scrolloff = 10
+vim.opt.colorcolumn = "80"
 
 vim.opt.wrap = false
+
+vim.opt.winborder = "double"
+
+-- vim.opt.clipboard:append("unnamedplus")
+
+-- vim.opt.expandtab = true
+-- vim.opt.autoindent = true
+
 
 
 -- 操作记录
